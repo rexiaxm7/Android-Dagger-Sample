@@ -7,7 +7,10 @@ import dagger.android.HasActivityInjector
 class Application : DaggerApplication(), HasActivityInjector {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.builder().create(this)
+        return DaggerAppComponent
+            .builder()
+            .appModule(AppModule(this))
+            .create(this)
     }
 
 }
