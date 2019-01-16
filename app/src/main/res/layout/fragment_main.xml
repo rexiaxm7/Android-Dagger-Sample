@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".MainFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewModel" type="com.example.rexia7.dagger2test3.MainViewModel" />
+    </data>
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" android:id="@+id/textView"/>
+            tools:context=".MainFragment">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{viewModel.name}" android:id="@+id/textView"/>
+        <EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:text="@={viewModel.name}"
+                android:id="@+id/editText" android:layout_width="wrap_content" android:importantForAutofill="no"/>
+
+    </FrameLayout>
+</layout>
