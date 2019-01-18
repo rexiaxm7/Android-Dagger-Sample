@@ -1,8 +1,8 @@
-package com.example.rexia7.dagger2test3.di
+package com.example.rexia7.dagger2test3
 
 import android.content.Context
-import com.example.rexia7.dagger2test3.Repo
-import com.example.rexia7.dagger2test3.SampleRepo
+import com.example.rexia7.dagger2test3.model.Repo
+import com.example.rexia7.dagger2test3.model.SampleRepo
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -1,19 +1,21 @@
-package com.example.rexia7.dagger2test3.di
+package com.example.rexia7.dagger2test3
 
 
+import com.example.rexia7.dagger2test3.ui.activity.main.MainActivityBuilder
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class,
     AppModule::class,
-    ActivityModule::class])
-interface AppComponent : AndroidInjector<Application> {
+    MainActivityBuilder::class])
+interface AppComponent : AndroidInjector<App> {
     @Component.Builder
-    abstract class Builder : AndroidInjector.Builder<Application>() {
+    abstract class Builder : AndroidInjector.Builder<App>() {
         abstract fun appModule(appModule: AppModule): Builder
 
         // @BindsInstanceを指定するとModuleのメソッド引数に渡すことができる

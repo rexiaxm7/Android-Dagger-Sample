@@ -1,14 +1,12 @@
-package com.example.rexia7.dagger2test3.di
+package com.example.rexia7.dagger2test3
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-import dagger.android.HasActivityInjector
 
-class Application : DaggerApplication(), HasActivityInjector {
+class App : DaggerApplication() {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent
-            .builder()
+        return DaggerAppComponent.builder()
             .appModule(AppModule(this))
             .create(this)
     }
